@@ -6,6 +6,7 @@ import {
   removeFromCart,
 } from "../redux/cartSlice";
 import { Link } from "react-router-dom";
+import { removeItem } from "../redux/CartSlice";
 
 const CartItem = () => {
   const dispatch = useDispatch();
@@ -54,18 +55,24 @@ const CartItem = () => {
               </div>
 
               <div style={{ display: "flex", gap: "10px" }}>
-                <button onClick={() => dispatch(decrementQty(item.id))}>
-                  -
+                <button onClick={() =>
+                     dispatch(updateQuantity({ id: item.id, quantity: item.quantity - 1 }))
+                }>
+                     -
                 </button>
+
                 <span>{item.quantity}</span>
-                <button onClick={() => dispatch(incrementQty(item.id))}>
-                  +
+                <button onClick={() =>
+                    dispatch(updateQuantity({ id: item.id, quantity: item.quantity + 1 }))
+                }>
+                    +
                 </button>
+
               </div>
 
               <button
                 style={{ background: "red", color: "white" }}
-                onClick={() => dispatch(removeFromCart(item.id))}
+                onClick={() => dispatch(removeItem(item.id))}
               >
                 Delete
               </button>

@@ -32,7 +32,7 @@ const ProductList = () => {
             <p>₹{p.price}</p>
             <button
               disabled={isAdded(p.id)}
-              onClick={() => dispatch(addToCart(p))}
+              onClick={() => dispatch(addItem(p))}
             >
               {isAdded(p.id) ? "Added" : "Add to Cart"}
             </button>
