@@ -4,7 +4,7 @@ import {
   incrementQty,
   decrementQty,
   removeFromCart,
-} from "../redux/cartSlice";
+} from "../redux/CartSlice";
 import { Link } from "react-router-dom";
 import { removeItem } from "../redux/CartSlice";
 
