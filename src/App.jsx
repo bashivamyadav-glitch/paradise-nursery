@@ -1,3 +1,4 @@
+import CartItem from "./pages/CartItem";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import ProductList from "./pages/ProductList";
 import "./App.css";
@@ -33,6 +34,8 @@ function App() {
 
         {/* Product List Page */}
         <Route path="/products" element={<ProductList />} />
+        <Route path="/cart" element={<CartItem />} />
+
       </Routes>
     </BrowserRouter>
   );
